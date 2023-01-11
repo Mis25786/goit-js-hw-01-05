@@ -112,7 +112,7 @@
 // const isAdmin = false;
 // console.log(isAdmin);
 
-//! Завдання 4
+//! Завдання 4 підрахунок загальної суми
 // Призначення, функціонал і пріоритет (порядок) операцій нічим не відрізняються від шкільного курсу алгебри. Оператори повертають значення як результат виразу.
 
 // const x = 10;
@@ -142,11 +142,11 @@
 //* Значення змінної totalPrice - це число 14000
 //* Використаний оператор *
 
-let totalPrice = pricePerItem * orderedQuantity;
-console.log(totalPrice);
-
 const pricePerItem = 3500;
 const orderedQuantity = 4;
+
+let totalPrice = pricePerItem * orderedQuantity;
+console.log(totalPrice);
 
 //! Завдання
 //todo
