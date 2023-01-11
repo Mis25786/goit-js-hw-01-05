@@ -1,4 +1,4 @@
-//! Завдання 1 створення змінної
+//! Завдання 1) створення змінної
 
 // Змінні використовуються для зберігання даних. У кожної змінної є ідентифікатор (назва змінної). Значення кожної змінної зберігається в оперативній пам'яті.
 
@@ -33,7 +33,7 @@
 // const pricePerItem = 2000;
 // console.log(pricePerItem);
 
-//! Завдання 2 змінити значення змінним
+//! Завдання 2) змінити значення змінним
 // Для того щоб оголосити змінну, якій у майбутньому можна буде присвоїти нове значення, використовується ключове слово let. Створення змінної без ключового слова let або const призведе до помилки.
 
 // let age = 5;
@@ -76,7 +76,7 @@
 
 // Change code below this line
 
-//! Завдання 3 створення змінних: число, рядок, буль
+//! Завдання 3) створення змінних: число, рядок, буль
 // В JavaScript змінна не асоціюється з будь-яким типом даних, тип є у її значення. Тобто змінна може зберігати значення різних типів.
 
 // Number - цілі числа і числа з плаваючою комою (крапкою).
@@ -112,7 +112,7 @@
 // const isAdmin = false;
 // console.log(isAdmin);
 
-//! Завдання 4 підрахунок загальної суми
+//! Завдання 4) підрахунок загальної суми
 // Призначення, функціонал і пріоритет (порядок) операцій нічим не відрізняються від шкільного курсу алгебри. Оператори повертають значення як результат виразу.
 
 // const x = 10;
@@ -142,14 +142,697 @@
 //* Значення змінної totalPrice - це число 14000
 //* Використаний оператор *
 
-const pricePerItem = 3500;
-const orderedQuantity = 4;
+// const pricePerItem = 3500;
+// const orderedQuantity = 4;
 
-let totalPrice = pricePerItem * orderedQuantity;
-console.log(totalPrice);
+// let totalPrice = pricePerItem * orderedQuantity;
+// console.log(totalPrice);
 
-//! Завдання
+//! Завдання 5) створення - шаблонний рядок
+// Шаблонні рядки — це альтернатива конкатенації зі зручнішим синтаксисом. Шаблонний рядок береться у зворотні (скісні) лапки, замість подвійних або одинарних, і може містити місцезаповнювачі, які позначаються знаком долара і фігурними дужками - ${вираз}.
+
+// const guestName = "Mango";
+// const roomNumber = 207;
+// const greeting = `Ласкаво просимо ${guestName}, ви заселені у номер ${roomNumber}`;
+
+//todo Оголоси змінну message і запиши в неї повідомлення про покупку, рядок у форматі: "You picked <назва товару>, price per item is <ціна товару> credits". Де <назва товару> і <ціна товару> — це значення змінних productName і pricePerItem. Використовуй синтаксис шаблонних рядків.
+
+//* Оголошена змінна productName
+//* Значення змінної productName - це рядок "Droid"
+//* Оголошена змінна pricePerItem
+//* Значення змінної price - це число 3500
+//* Оголошена змінна message
+//* Значення змінної message - це рядок "You picked Droid, price per item is 3500 credits"
+
+// const productName = "Droid";
+// const pricePerItem = 3500;
+
+// // Change code below this line
+// const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;
+// console.log(message);
+
+//! Завдання 6) використання шаблонного рядка і підрахунок загальної суми
+
+// ЗАДАЧА: ЗАМОВЛЕННЯ ПРОДУКТУ
+//todo Магазин з продажу ремонтних дроїдів готовий до відкриття, залишилося написати скрипт для їх замовлення. Оголоси змінні та присвой їм відповідні значення:
+
+//todo pricePerDroid - ціна одного дроїда, значення 800
+//todo orderedQuantity - кількість дроїдів у замовленні, значення 6
+//todo deliveryFee - вартість доставки, значення 50
+//todo totalPrice - загальна сума замовлення до сплати, не забудь про вартість доставки
+//todo message - повідомлення про стан замовлення у форматі "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."
+
+//* Оголошена змінна orderedQuantity
+//* Значення змінної orderedQuantity - це число 6
+//* Оголошена змінна pricePerDroid
+//* Значення змінної pricePerDroid - це число 800
+//* Оголошена змінна deliveryFee
+//* Значення змінної deliveryFee - це число 50
+//* Оголошена змінна totalPrice
+//* Значення змінної totalPrice - це число 4850
+//* Оголошена змінна message
+//* Значення змінної message - це рядок "You ordered droids worth 4850 credits. Delivery (50 credits) is included in total price."
+
+// const pricePerDroid = 800;
+// const orderedQuantity = 6;
+// const deliveryFee = 50;
+// const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+
+// const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+// console.log(message);
+
+//! Завдання 7) створення функції та виклик її
+// Функція - це підпрограма, незалежна частина коду, призначена для багаторазового виконання конкретної задачі з різними початковими значеннями.
+
+// Функцію можна уявити як чорний ящик — вона отримує щось на вході (дані), і повертає щось на виході (результат виконання коду всередині неї).
+
+// // 1. Оголошення функції multiply
+// function multiply() {
+//   // Тіло функції
+//   console.log("multiply function invocation");
+// }
+
+// // 2. Виклики функції multiply
+// multiply(); // multiply function invocation
+// multiply(); // multiply function invocation
+// multiply(); // multiply function invocation
+// Оголошення функції починається з ключового слова function, за яким йде її ім'я — дієслово, що відповідає на питання «Що зробити?» і пара круглих дужок. Тіло функції береться у фігурні дужки {} і містить інструкції, які необхідно виконати під час її виклику. Потім, коли необхідно, функція викликається за допомогою імені та пари круглих дужок.
+
+//todo Оголоси функцію sayHi, всередині якої додай console.log() з рядком "Hello, this is my first function!". Після оголошення виклич функцію sayHi.
+
+// Очікується оголошення функції
+// Функції присвоєно ім'я sayHi
+// В тілі функції sayHi є console.log("Hello, this is my first function!")
+// Після оголошення є виклик функції sayHi
+
+// function sayHi() {
+//   console.log("Hello, this is my first function!");
+// }
+// sayHi();
+
+//! Завдання 8) додавання параметрів, вивід шаблоннного рядка, виведення(обчислення) суми переданих чисел
+// В круглих дужках після імені функції йдуть параметри - перелік даних, які функція очікує під час виклику.
+
+// Параметри - це локальні змінні, доступні тільки у тілі функції. Вони розділяються комами. Параметрів може бути декілька або їх взагалі може не бути, тоді записуються просто порожні круглі дужки.
+
+// Під час виклику функції, в круглих дужках можна передати аргументи - значення для оголошених параметрів функції.
+
+// // 1. Оголошення параметрів x, y, z
+// function multiply(x, y, z) {
+//   console.log(`Результат множення дорівнює ${x * y * z}`);
+// }
+
+// // 2. Передача аргументів
+// multiply(2, 3, 5); // Результат множення дорівнює 30
+// multiply(4, 8, 12); // Результат множення дорівнює 384
+// multiply(17, 6, 25); // Результат множення дорівнює 2550
+// Порядок передачі аргументів повинен відповідати порядку оголошених параметрів: значення першого аргументу буде присвоєно першому параметру, другого аргументу - другому параметру тощо.
+
+//todo Функція add повинна вміти додавати три числа і виводити результат у консоль. Додай функції add три параметри: a, b і c, які будуть отримувати значення аргументів під час її виклику.
+
+//todo Доповни console.log() таким чином, щоб він логував рядок "Addition result equals <result>", де <result> - це сума переданих чисел.
+
+//* Оголошена функція add(a, b, c)
+//* Виклик add(15, 27, 10) виводить у консоль "Addition result equals 52"
+//* Виклик add(10, 20, 30) виводить у консоль "Addition result equals 60"
+//* Виклик add(5, 10, 15) виводить у консоль "Addition result equals 30"
+
+// // Change code below this line
+// function add(a, b, c) {
+//   console.log(`Addition result equals ${a + b + c}`);
+//   // Change code above this line
+// }
+
+// add(15, 27, 10);
+// add(10, 20, 30);
+// add(5, 10, 15);
+
+//! Завдання 9) застосування => return
+// Оператор return використовується для передачі значення з тіла функції у зовнішній код. Коли інтерпретатор зустрічає return, він відразу ж виходить з функції (припиняє її виконання), і повертає вказане значення у те місце коду, де функція була викликана.
+
+// function multiply(x, y, z) {
+//   console.log("Код до return виконується звичайним чином");
+
+//   // Повертаємо результат виразу множення
+//   return x * y * z;
+
+//   console.log("Цей лог ніколи не виконається, він стоїть після return");
+// }
+
+// // Результат роботи функції можна зберегти у змінну
+// let result = multiply(2, 3, 5);
+// console.log(result); // 30
+
+// result = multiply(4, 8, 12);
+// console.log(result); // 384
+
+// result = multiply(17, 6, 25);
+// console.log(result); // 2550
+// Оператор return без явно вказаного значення повертає спеціальне значення undefined. За відсутності return у тілі функції, вона все одно поверне undefined.
+
+//todo Доповни код функції add таким чином, щоб вона повертала результат додавання значень трьох параметрів: a, b і c.
+
+//* Оголошена функція add(a, b, c)
+//* У функції add є оператор return
+//* Виклик add(15, 27, 10) повертає 52
+//* Виклик add(10, 20, 30) повертає 60
+//* Виклик add(5, 10, 15) повертає 30
+//* Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// function add(a, b, c) {
+//   // Change code below this line
+//   return a + b + c;
+//   // Change code above this line
+// }
+
+// add(2, 5, 8); // 15
+
+// console.log(add(15, 27, 10));
+// console.log(add(10, 20, 30));
+// console.log(add(5, 10, 15));
+
+//! Завдання 10) повернення (return) шаблонного рядка з значеннями( ${name} / ${price}) параметрів
+// ЗАДАЧА: ШАБЛОННІ РЯДКИ 2.0
+
+//todo Функція makeMessage(name, price) складає і повертає повідомлення про покупку. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику.
+
+//todo name - назва товару
+//todo price - ціна товару
+//todo Доповни код функції таким чином, щоб у змінну message записувався рядок "You picked <product name>, price per item is <product price> credits", де <product name> і <product price> - це значення параметрів name і price. Використовуй синтаксис шаблонних рядків.
+
+//todo Увага
+//todo Зверни увагу на те, що в коді відсутній виклик функції makeMessage. З цього завдання і далі ми самі будемо викликати твої функції і перевіряти те, як вони працюють. Результат наших перевірок ти побачиш у блоці Результати під редактором коду.
+
+//* Оголошена функція makeMessage(name, price)
+//* Виклик makeMessage('Radar', 6150) повертає "You picked Radar, price per item is 6150 credits"
+//* Виклик makeMessage('Scanner', 3500) повертає "You picked Scanner, price per item is 3500 credits"
+//* Виклик makeMessage('Reactor', 8000) повертає "You picked Reactor, price per item is 8000 credits"
+//* Виклик makeMessage('Engine', 4070) повертає "You picked Engine, price per item is 4070 credits"
+
+// function makeMessage(name, price) {
+//   // Change code below this line
+//   const message = `You picked ${name}, price per item is ${price} credits`;
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(makeMessage("Radar", 6150));
+// console.log(makeMessage("Scanner", 3500));
+// console.log(makeMessage("Reactor", 8000));
+// console.log(makeMessage("Engine", 4070));
+
+//! Завдання 11) рахує і повертає загальну суму => приймає два параметри
+// ЗАДАЧА: МАТЕМАТИЧНІ ОПЕРАТОРИ 2.0
+
+//todo Функція calculateTotalPrice рахує і повертає загальну суму покупки. Вона приймає два параметри, значення яких будуть задаватися під час її виклику.
+
+//todo orderedQuantity - кількість одиниць товару в замовленні;
+//todo pricePerItem - ціна однієї одиниці товару.
+//todo Доповни код функції таким чином, щоб у змінну totalPrice записувалася загальна сума покупки - результат множення кількості товарів на ціну одного.
+
+//* Оголошена функція calculateTotalPrice (orderedQuantity, pricePerItem)
+//* Виклик calculateTotalPrice(5, 100) повертає 500
+//* Виклик calculateTotalPrice(8, 60) повертає 480
+//* Виклик calculateTotalPrice(3, 400) повертає 1200
+//* Виклик calculateTotalPrice(1, 3500) повертає 3500
+//* Виклик calculateTotalPrice(12, 70) повертає 840
+//* Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// function calculateTotalPrice(orderedQuantity, pricePerItem) {
+//   // Change code below this line
+//   const totalPrice = pricePerItem * orderedQuantity;
+
+//   // Change code above this line
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice(5, 100));
+// console.log(calculateTotalPrice(8, 60));
+// console.log(calculateTotalPrice(3, 400));
+// console.log(calculateTotalPrice(1, 3500));
+// console.log(calculateTotalPrice(12, 70));
+
+//! Завдання 12) рахуємо загальну сумму і виводимо в шаблонний рядок
+// ЗАДАЧА: ЗАМОВЛЕННЯ ПРОДУКТУ 2.0
+
+//todo Функція makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) складає і повертає повідомлення про покупку ремонтних дроїдів. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику.
+
+//todo orderedQuantity - кількість дроїдів у замовленні
+//todo pricePerDroid - ціна одного дроїда
+//todo deliveryFee - вартість доставки
+//todo Доповни код функції таким чином, щоб вона повертала повідомлення про замовлення у форматі "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Не забудь про ціну доставки в обчисленнях загальної вартості.
+
+//* Оголошена функція makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee)
+//* Виклик makeOrderMessage(2, 100, 50) повертає "You ordered droids worth 250 credits. Delivery (50 credits) is included in total price."
+//* Виклик makeOrderMessage(4, 300, 100) повертає "You ordered droids worth 1300 credits. Delivery (100 credits) is included in total price."
+//* Виклик makeOrderMessage(10, 70, 200) повертає "You ordered droids worth 900 credits. Delivery (200 credits) is included in total price."
+
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   // Change code below this line
+//   //   const message = `You ordered droids worth ${
+//   //     pricePerDroid * orderedQuantity + deliveryFee
+//   //   } credits. Delivery ${deliveryFee} credits) is included in total price.`;
+//   // Change code above this line
+//   const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+//   const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+
+//   return message;
+// }
+
+// console.log(makeOrderMessage(2, 100, 50));
+// console.log(makeOrderMessage(4, 300, 100));
+// console.log(makeOrderMessage(10, 70, 200));
+
+//! Завдання 13) використання операторів < / >/ = / >= / <= і перевірка повноліття
+// Використовується для порівняння двох значень. Результатом свого виконання повертають буль - true або false, тобто «так» або «ні».
+
+// > - більше
+// < - менше
+// >= - більше або дорівнює
+// <= - менше або дорівнює
+// const a = 2;
+// const b = 5;
+
+// console.log(a > b); // false
+// console.log(b > a); // true
+// console.log(a >= b); // false
+// console.log(b >= a); // true
+
+// console.log(a < b); // true
+// console.log(b < a); // false
+// console.log(a <= b); // true
+// console.log(b <= a); // false
+
+//todo Функція isAdult оголошує один параметр age (вік), значення якого буде задаватися під час її виклику. Присвой змінній passed вираз перевірки віку користувача на повноліття. Людина вважається повнолітньою у віці 18 років і старше.
+
+//* Оголошена функція isAdult(age)
+//* У виразі перевірки використовується оператор >=
+//* Виклик isAdult(20) повертає true
+//* Виклик isAdult(14) повертає false
+//* Виклик isAdult(8) повертає false
+//* Виклик isAdult(37) повертає true
+
+// function isAdult(age) {
+//   // Change code below this line
+//   const passed = age >= 18;
+
+//   // Change code above this line
+//   return passed;
+// }
+
+// console.log(isAdult(20));
+// console.log(isAdult(14));
+// console.log(isAdult(8));
+// console.log(isAdult(37));
+
+//! Завдання 14) використання строгого порівняння( ===) , провірка пароля (вхідного-параметром із збереженим)
+// «Нестрогі» оператори == і != виконують перетворення типів значень, що порівнюються, що може призвести до помилок, особливо у початківців.
+
+// // ❌ Погано, виконується приведення типів
+// console.log(5 == "5"); // true
+// console.log(5 != "5"); // false
+// console.log(1 == true); // true
+// console.log(1 != true); // false
+// Тому для перевірки рівності або нерівності двох значень використовуються оператори === (строга рівність) і !== (строга нерівність), які не виконують приведення типів операндів.
+
+// // ✅ Добре, приведення типів не виконується
+// console.log(5 === "5"); // false
+// console.log(5 === 5); // true
+// console.log(5 !== "5"); // true
+// console.log(5 !== 5); // false
+// console.log(1 === true); // false
+// console.log(1 !== true); // true
+
+//todo Функція isValidPassword (password) перевіряє рівність збереженого і введеного паролів і повертає результат перевірки - буль true або false. Змінна SAVED_PASSWORD зберігає значення попередньо збереженого пароля. Введений пароль передається у параметр password.
+
+//todo Присвой змінній isMatch вираз перевірки рівності введених і попередньо збережених паролів. Результатом виразу перевірки повинно бути true, якщо значення збігаються, і false - якщо ні.
+
+//* Оголошена функція isValidPassword(password)
+//* У виразі перевірки паролів використаний оператор ===
+//* Виклик isValidPassword("mangodab3st") повертає false
+//* Виклик isValidPassword("kiwirul3z") повертає false
+//* Виклик isValidPassword("jqueryismyjam") повертає true
+
+// function isValidPassword(password) {
+//   const SAVED_PASSWORD = "jqueryismyjam";
+//   // Change code below this line
+//   const isMatch = password === SAVED_PASSWORD;
+
+//   // Change code above this line
+//   return isMatch;
+// }
+
+// console.log(isValidPassword("mangodab3st"));
+// console.log(isValidPassword("kiwirul3z"));
+// console.log(isValidPassword("jqueryismyjam"));
+
+//! Завдання 15) перевірка повноліття і виведення повідомлення за допомогою if...else
+// Розгалуження використовуються для виконання різного коду, залежно від умови. Принцип роботи простий - результат виразу в умові блоку if приводиться до буля true або false.
+
+// if (умова) {
+//   // тіло if
+// } else {
+//   // тіло else
+// }
+// Якщо умова приводиться до true, то виконується код у фігурних дужках тіла if, а блок else ігнорується.
+
+// let cost;
+// const subscription = "pro";
+
+// if (subscription === "pro") {
+//   cost = 100;
+// } else {
+//   cost = 0;
+// }
+
+// console.log(cost); // 100
+// Якщо умова приводиться до false, код блоку if буде пропущений, і виконається код у фігурних дужках після блоку else.
+
+// let cost;
+// const subscription = "free";
+
+// if (subscription === "pro") {
+//   cost = 100;
+// } else {
+//   cost = 0;
+// }
+
+// console.log(cost); // 0
+
+//todo Додай вираз перевірки повноліття користувача, значення параметра age, в умову для інструкції if.
+
+//todo Якщо користувач повнолітній, повинен виконуватися блок if і у змінну message записується рядок "You are an adult".
+//todo В іншому випадку повинен виконуватися блок else і записується рядок "You are a minor".
+
+//* Оголошена функція checkAge(age).
+//* У виразі перевірки віку використаний оператор >=
+//* Виклик checkAge(20) повертає "You are an adult"
+//* Виклик checkAge(8) повертає "You are a minor"
+//* Виклик checkAge(14) повертає "You are a minor"
+//* Виклик checkAge(38) повертає "You are an adult"
+
+// function checkAge(age) {
+//   let message;
+
+//   if (age >= 18) {
+//     // Change this line
+//     message = "You are an adult";
+//   } else {
+//     message = "You are a minor";
+//   }
+
+//   return message;
+// }
+
+// console.log(checkAge(20));
+// console.log(checkAge(8));
+// console.log(checkAge(14));
+// console.log(checkAge(38));
+
+//! Завдання 16) if...else   провіряємо чи в замовленні(ordered) не перевищує кількість товару ніж є на складі(available)
+// ЗАДАЧА: СКЛАД ТОВАРІВ
+
+//todo Функція checkStorage(available, ordered) перевіряє можливість оформлення замовлення і повертає повідомлення про результат. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику:
+
+//todo available - загальна кількість товарів на складі
+//todo ordered - одиниць товару в замовленні
+//todo Використовуючи розгалуження, доповни код функції таким чином, що:
+
+//todo Якщо в замовленні вказане число, яке перевищує кількість товарів на складі, у змінну message записується рядок "Not enough goods in stock!".
+//todo В іншому випадку записується рядок "Order is processed, our manager will contact you.".
+
+//* Оголошена функція checkStorage(available, ordered).
+//* Виклик checkStorage(100, 50) повертає "Order is processed, our manager will contact you."
+//* Виклик checkStorage(100, 130) повертає "Not enough goods in stock!"
+//* Виклик checkStorage(200, 20) повертає "Order is processed, our manager will contact you."
+//* Виклик checkStorage(200, 150) повертає "Order is processed, our manager will contact you."
+//* Виклик checkStorage(150, 180) повертає "Not enough goods in stock!"
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (ordered > available) {
+//     message = "Not enough goods in stock!";
+//   } else {
+//     message = "Order is processed, our manager will contact you.";
+//   }
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(checkStorage(100, 50));
+// console.log(checkStorage(100, 130));
+// console.log(checkStorage(200, 20));
+// console.log(checkStorage(200, 150));
+// console.log(checkStorage(150, 180));
+
+//! Завдання 17) збільшуємо значення змінної(age) на одиницю(1) від попереднього значення, і оновлюємо значення в змінній(age)
+// Комбіновані оператори - це коротший спосіб присвоїти змінній нове значення, ґрунтуючись на її попередньому значенні.
+
+// Будемо збільшувати значення змінної age на одиницю від попереднього, імітуючи оновлення віку після дня народження користувача.
+
+// let age = 25;
+// // Класичний запис
+// age = age + 1;
+// console.log(age); // 26
+// Спочатку виконується права частина виразу. Замість age підставляється 25, виконується операція додавання, і у змінну age записується 26.
+
+// Виконаємо рефакторинг операції оновлення віку, використовуючи комбінований оператор присвоєння з додаванням.
+
+// let age = 25;
+// // Просто коротший запис, працює так само
+// age += 1;
+// console.log(age); // 26
+
+//todo Заміни вирази зі стандартними математичними операторами на комбінований оператор присвоєння з додаванням, відніманням, множенням і діленням.
+
+//* Значення змінної a дорівнює 7
+//* Використаний оператор +=
+//* Значення змінної b дорівнює 6
+//* Використаний оператор -=
+//* Значення змінної c дорівнює 45
+//* Використаний оператор *=
+//* Значення змінної d дорівнює 2
+//* Використаний оператор /=
+
+// let a = 5;
+// let b = 10;
+// let c = 15;
+// let d = 20;
+
+// a = a + 2;
+// b = b - 4;
+// c = c * 3;
+// d = d / 10;
+// // Change code below this line
+// a += 2;
+// b -= 4;
+// c *= 3;
+// d /= 10;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+
+//! Завдання 18) рахуємо сумму замовлення і провіряємо чи достатнь коштів на балансі для оплати у клієнта - виводимо повідомлення
+// ЗАДАЧА: ПЕРЕВІРКА БАЛАНСУ
+
+//todo Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для відділу продажів.
+
+//todo Функція makeTransaction(pricePerDroid, orderedQuantity, customerCredits) виконує транзакцію з продажу дроїдів і повертає повідомлення про результат операції. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+//todo pricePerDroid - ціна одного дроїда
+//todo orderedQuantity - кіл-сть замовлених дроїдів
+//todo customerCredits - сума коштів на рахунку клієнта
+//todo Доповни її наступним функціоналом:
+
+//todo Оголоси змінну totalPrice для зберігання загальної суми замовлення і присвой їй вираз розрахунку цієї суми.
+//todo Додай перевірку, чи зможе клієнт оплатити замовлення:
+//todo якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, запиши у змінну message рядок "Insufficient funds!";
+//todo в іншому випадку, відніми суму покупки з рахунку клієнта і запиши у змінну message повідомлення: "You ordered <число> droids, you have <число> credits left".
+
+// Оголошена функція makeTransaction(pricePerDroid, orderedQuantity, customerCredits)
+// Виклик makeTransaction(3000, 5, 23000) повертає "You ordered 5 droids, you have 8000 credits left"
+// Виклик makeTransaction(1000, 3, 15000) повертає "You ordered 3 droids, you have 12000 credits left"
+// Виклик makeTransaction(5000, 10, 8000) повертає "Insufficient funds!"
+// Виклик makeTransaction(2000, 8, 10000) повертає "Insufficient funds!"
+// Виклик makeTransaction(500, 10, 5000) повертає "You ordered 10 droids, you have 0 credits left"
+
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+//   let totalPrice = pricePerDroid * orderedQuantity;
+
+//   if (totalPrice > customerCredits) {
+//     message = "Insufficient funds!";
+//   } else {
+//     message = `You ordered ${orderedQuantity} droids, you have ${
+//       customerCredits - totalPrice
+//     } credits left`;
+//   }
+
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(makeTransaction(3000, 5, 23000));
+// console.log(makeTransaction(1000, 3, 15000));
+// console.log(makeTransaction(5000, 10, 8000));
+// console.log(makeTransaction(2000, 8, 10000));
+// console.log(makeTransaction(500, 10, 5000));
+
+//! Завдання 19) else...if  при провірці пароля виводимо повідомлення залежно від введених данних
+// Конструкція if...else може перевірити і зреагувати на виконання або невиконання тільки однієї умови.
+
+// let cost;
+// const subscription = "pro";
+
+// if (subscription === "pro") {
+//   cost = 100;
+// } else {
+//   cost = 0;
+// }
+
+// console.log(cost); // 100
+// Блок else...if дозволяє додати після else ще один оператор if з умовою. В кінці ланцюжка може бути класичний блок else, який виконається тільки у разі, коли жодна з умов не приведеться до true.
+
+// let cost;
+// const subscription = "premium";
+
+// if (subscription === "free") {
+//   cost = 0;
+// } else if (subscription === "pro") {
+//   cost = 100;
+// } else if (subscription === "premium") {
+//   cost = 500;
+// } else {
+//   console.log(`Invalid subscription type - ${subscription}`);
+// }
+
+// console.log(cost); // 500
+// За першої ж задовільної умови перевірки припиняться і виконається тільки тіло відповідного блоку if. Тому подібний запис потрібно читати як: «шукаю перше виконання умови, ігнорую все інше».
+
+//todo Функція checkPassword(password) отримує пароль користувача в параметр password, перевіряє його на збіг з паролем адміністратора у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння, яке зберігається у змінній message.
+
+//todo Якщо значення параметра password дорівнює null, значить користувач скасував операцію і в message записується рядок "Canceled by user!".
+//todo Якщо значення параметра password збігається зі значенням ADMIN_PASSWORD, у змінну message присвоюється рядок "Welcome!".
+//todo Якщо жодна з попередніх умов не виконалася, у змінну message записується рядок "Access denied, wrong password!".
+
+//* Оголошена функція checkPassword(password)
+//* Виклик checkPassword("mangohackzor") повертає "Access denied, wrong password!"
+//* Виклик checkPassword(null) повертає "Canceled by user!"
+//* Виклик checkPassword("polyhax") повертає "Access denied, wrong password!"
+//* Виклик checkPassword("jqueryismyjam") повертає "Welcome!"
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+
+//   if (password === null) {
+//     // Change this line
+//     message = "Canceled by user!";
+//   } else if (password === ADMIN_PASSWORD) {
+//     // Change this line
+//     message = "Welcome!";
+//   } else {
+//     message = "Access denied, wrong password!";
+//   }
+
+//   return message;
+// }
+
+// console.log(checkPassword("mangohackzor"));
+// console.log(checkPassword(null));
+// console.log(checkPassword("polyhax"));
+// console.log(checkPassword("jqueryismyjam"));
+
+//! Завдання 20) else...if перевіряємо замовлення чи була введена кількість і чи є така кількість на складі і виводимо повідомлення залежно від результату
+// ЗАДАЧА: СКЛАД ТОВАРІВ 2.0
+
+//todo Функція checkStorage(available, ordered) перевіряє можливість оформлення замовлення і повертає повідомлення про результат. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику.
+
+//todo available - доступна кількість товарів на складі
+//todo ordered - одиниць товару в замовленні
+//todo Використовуючи розгалуження, доповни код функції таким чином, що:
+
+//todo Якщо в замовленні ще немає товарів, тобто значення параметра ordered дорівнює 0, у змінну message присвоюється рядок "There are no products in the order!".
+//todo Якщо товарів у замовленні більше, ніж доступно товарів на складі, то у змінну message присвоюється рядок "Your order is too large, there are not enough items in stock!".
+//todo В іншому випадку у змінну message присвоюється рядок "The order is accepted, our manager will contact you".
+
+// Оголошена функція checkStorage(available, ordered)
+// Виклик checkStorage(100, 50) повертає "The order is accepted, our manager will contact you"
+// Виклик checkStorage(100, 130) повертає "Your order is too large, there are not enough items in stock!"
+// Виклик checkStorage(70, 0) повертає "There are no products in the order!"
+// Виклик checkStorage(200, 20) повертає "The order is accepted, our manager will contact you"
+// Виклик checkStorage(200, 250) повертає "Your order is too large, there are not enough items in stock!"
+// Виклик checkStorage(150, 0) повертає "There are no products in the order!"
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (ordered === 0) {
+//     message = "There are no products in the order!";
+//   } else if (ordered > available) {
+//     message = "Your order is too large, there are not enough items in stock!";
+//   } else {
+//     message = "The order is accepted, our manager will contact you";
+//   }
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(checkStorage(100, 50));
+// console.log(checkStorage(100, 130));
+// console.log(checkStorage(70, 0));
+// console.log(checkStorage(200, 20));
+// console.log(checkStorage(200, 250));
+// console.log(checkStorage(150, 0));
+
+//! Завдання 21)
 //todo
 
-//! Завдання
+//! Завдання 22)
+//todo
+
+//! Завдання 23)
+//todo
+
+//! Завдання 24)
+//todo
+
+//! Завдання 25)
+//todo
+
+//! Завдання 26)
+//todo
+
+//! Завдання 27)
+//todo
+
+//! Завдання 28)
+//todo
+
+//! Завдання 29)
+//todo
+
+//! Завдання 30)
+//todo
+
+//! Завдання 31)
+//todo
+
+//! Завдання 32)
+//todo
+
+//! Завдання 33)
+//todo
+
+//! Завдання 34)
+//todo
+
+//! Завдання 35)
+//todo
+
+//! Завдання 36)
 //todo
