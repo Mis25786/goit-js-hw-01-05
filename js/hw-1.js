@@ -789,17 +789,211 @@
 // console.log(checkStorage(200, 250));
 // console.log(checkStorage(150, 0));
 
-//! Завдання 21)
-//todo
+//! Завдання 21) оператора-&& (повертає перше знайдене false) для провірки чи входить число в проміжок чисел start (number) end
+// Логічні оператори використовуються для перевірки умов з багатьма виразами, наприклад у розгалуженнях.
 
-//! Завдання 22)
-//todo
+// Оператор && приводить всі операнди до буля і повертає значення одного з них. Лівий операнд, якщо його можна привести до false, і правий - в інших випадках.
 
-//! Завдання 23)
-//todo
+// вираз && вираз
+// У наступному прикладі обидві умови повернуть true, тому результатом всього виразу буде true - повернеться значення правого операнда.
+
+// const age = 20;
+// console.log(age > 10 && age < 30); // true && true -> true
+// Якщо хоча б один з операндів буде приведений до false, результатом виразу буде цей операнд.
+
+// const age = 50;
+// console.log(age > 10 && age < 30); // true && false -> false
+// console.log(age > 80 && age < 120); // false && true -> false
+// Тобто логічне «І» запинається на хибності і повертає те, на чому запнувся або останній операнд.
+
+// console.log(true && false); // false
+// console.log(false && true); // false
+// console.log(true && true); // true
+
+// console.log(3 && false); // false
+// console.log(false && 3); // false
+// console.log(3 && true); // true
+// console.log(true && 3); // 3
+// Корисно
+// Запам'ятайте шість значень, які в булевому перетворенні приводяться до `false`: `0`, `NaN`, `null`, `undefined`, порожній рядок `""` або `''` і саме значення `false`. Абсолютно все інше приводиться до `true`.
+
+// console.log(1 && 5); // true && true -> 5
+// console.log(5 && 1); // true && true -> 1
+// console.log(0 && 2); // false && true -> 0
+// console.log(2 && 0); // true && false -> 0
+// console.log("" && "Mango"); // false && true -> ''
+// console.log("Mango" && ""); // true && false -> ''
+// console.log("Mango" && "Poly"); // true && true -> 'Poly'
+// console.log("Poly" && "Mango"); // true && true -> 'Mango'
+
+//todo Функція isNumberInRange(start, end, number) перевіряє, чи входить число у проміжок. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+//todo number - число, входження якого перевіряється
+//todo start - початок числового проміжку
+//todo end - кінець числового проміжку
+//todo Присвой змінній isInRange вираз перевірки входження number у числовий проміжок від start до end. Тобто число повинно бути більшим або дорівнювати start, і меншим або дорівнювати end. Результатом виразу перевірки буде буль true або false.
+
+// Оголошена функція isNumberInRange(start, end, number)
+// У виразі перевірки використаний оператор &&
+// Виклик isNumberInRange(10, 30, 17) повертає true
+// Виклик isNumberInRange(10, 30, 5) повертає false
+// Виклик isNumberInRange(20, 50, 24) повертає true
+// Виклик isNumberInRange(20, 50, 76) повертає false
+
+// function isNumberInRange(start, end, number) {
+//   const isInRange = start <= number && number <= end; // Change this line
+
+//   return isInRange;
+// }
+// console.log(isNumberInRange(10, 30, 17));
+// console.log(isNumberInRange(10, 30, 5));
+// console.log(isNumberInRange(20, 50, 24));
+// console.log(isNumberInRange(20, 50, 76));
+
+//! Завдання 22) Оператор || повертає перше знайдене true.
+// Оператор || приводить всі операнди до буля і повертає значення одного з них. Лівий операнд, якщо його можна привести до true, і правий - в інших випадках.
+
+// вираз || вираз
+// У наступному прикладі умова зліва поверне true, тому результатом всього виразу буде true - повернеться значення першого операнда, яке було приведене до true.
+
+// const age = 5;
+// console.log(age < 10 || age > 30); // true || false -> true
+// Тут результатом теж буде true, оскільки хоча б один з операндів, у цьому випадку правий, був приведений до true.
+
+// const age = 40;
+// console.log(age < 10 || age > 30); // false || true -> true
+// А тут жодна з умов не виконується, тому отримуємо false - значення останнього операнда.
+
+// const age = 20;
+// console.log(age < 10 || age > 30); // false || false -> false
+// Тобто логічне «АБО» запинається на істині і повертає те, на чому запнулося або останній операнд.
+
+// console.log(true || false); // true
+// console.log(false || true); // true
+// console.log(true || true); // true
+
+// console.log(3 || false); // 3
+// console.log(false || 3); // 3
+// console.log(3 || true); // 3
+// console.log(true || 3); // true
+
+//todo Функція checkIfCanAccessContent(subType) перевіряє, чи може користувач отримати доступ до контенту. Перевірка відбувається за типом передплати. Отримати доступ можуть тільки користувачі з передплатою pro або vip.
+
+//todo Присвой змінній canAccessContent вираз перевірки передплати. Якщо значення параметра subType дорівнює рядкам "pro" або "vip", користувач отримає доступ. Результатом виразу перевірки буде буль true або false.
+
+// Оголошена функція checkIfCanAccessContent(subType)
+// У виразі перевірки використаний оператор ||
+// Виклик checkIfCanAccessContent("pro") повертає true
+// Виклик checkIfCanAccessContent("starter") повертає false
+// Виклик checkIfCanAccessContent("vip") повертає true
+// Виклик checkIfCanAccessContent("free") повертає false
+
+// function checkIfCanAccessContent(subType) {
+//   const canAccessContent = subType === "pro" || subType === "vip"; // Change this line
+
+//   return canAccessContent;
+// }
+
+// console.log(checkIfCanAccessContent("pro"));
+// console.log(checkIfCanAccessContent("starter"));
+// console.log(checkIfCanAccessContent("vip"));
+// console.log(checkIfCanAccessContent("free"));
+
+//! Завдання 23) Оператор ! перевіряємо чи входить число у проміжок і робимо інверсію значення
+// Всі оператори, які ми розглядали до цього, були бінарними. Тобто вони містили два операнди: лівий і правий. Логічне «НЕ» - це унарний оператор, що виконує операцію над одним операндом справа.
+
+// !вираз
+// Оператор ! приводить операнд до буля, якщо необхідно, а потім робить інверсію - замінює його на протилежний true -> false або false -> true.
+
+// console.log(!true); // false
+// console.log(!false); // true
+// console.log(!3); // !3 -> !true -> false
+// console.log(!"Mango"); // !'Mango' -> !true -> false
+// console.log(!0); // !0 -> !false -> true
+// console.log(!""); // !'' -> !false -> true
+
+// const isOnline = true;
+// const isNotOnline = !isOnline; // !isOnline -> !true -> false
+
+//todo Функція isNumberNotInRange(start, end, number) перевіряє, чи не входить число у проміжок. Тобто число повинно бути меншим або дорівнювати start і більшим або дорівнювати end. Результатом виразу перевірки буде буль true або false.
+
+//todo Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+//todo number - число, невходження якого перевіряється
+//todo start - початок числового проміжку
+//todo end - кінець числового проміжку
+//todo Присвой змінній isNotInRange вираз інверсії значення змінної isInRange, використовуючи оператор !.
+
+//* Оголошена функція isNumberNotInRange(start, end, number)
+//* У виразі використаний оператор !
+//* Виклик isNumberNotInRange(10, 30, 17) повертає false
+//* Виклик isNumberNotInRange(10, 30, 5) повертає true
+//* Виклик isNumberNotInRange(20, 50, 24) повертає false
+//* Виклик isNumberNotInRange(20, 50, 76) повертає true
+
+// function isNumberNotInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
+//   console.log(isInRange);
+
+//   const isNotInRange = !isInRange; // Change this line
+
+//   return isNotInRange;
+// }
+
+// console.log(isNumberNotInRange(10, 30, 17));
+// console.log(isNumberNotInRange(10, 30, 5));
+// console.log(isNumberNotInRange(20, 50, 24));
+// console.log(isNumberNotInRange(20, 50, 76));
 
 //! Завдання 24)
-//todo
+// ЗАДАЧА: ОБЧИСЛЕННЯ ЗНИЖКИ
+
+//todo Функція getDiscount(totalSpent) визначає значення знижки, залежно від загальної суми витрачених грошей (параметр totalSpent) в магазині за весь час (партнерська програма). Знижка записується у змінну discount і повертається з функції як результат її роботи.
+
+//todo Використовуючи розгалуження і логічні оператори, доповни код функції.
+
+//todo Якщо витрачено від 50000 (включно) або більше кредитів - знижка 10% (золотий партнер)
+//todo Якщо витрачено від 20000 (включно) до 50000 кредитів - знижка 5% (срібний партнер)
+//todo Якщо витрачено від 5000 (включно) до 20000 кредитів - знижка 2% (бронзовий партнер)
+//todo Якщо витрачено менше 5000 кредитів - знижка 0 (базовий партнер)
+//todo Значення знижок кожного рівня зберігаються в однойменних константах BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT і GOLD_DISCOUNT.
+
+// Оголошена функція getDiscount(totalSpent)
+// Виклик getDiscount(137000) повертає 0.1
+// Виклик getDiscount(46900) повертає 0.05
+// Виклик getDiscount(8250) повертає 0.02
+// Виклик getDiscount(1300) повертає 0
+// Виклик getDiscount(5000) повертає 0.02
+// Виклик getDiscount(20000) повертає 0.05
+// Виклик getDiscount(50000) повертає 0.1
+
+function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+  // Change code below this line
+  if (totalSpent >= 50000) {
+    discount = GOLD_DISCOUNT;
+  } else if (totalSpent > 20000 && 50000 > totalSpent) {
+    discount = SILVER_DISCOUNT;
+  } else if (totalSpent > 5000 && 20000 < totalSpent) {
+    discount = BRONZE_DISCOUNT;
+  } else if (totalSpent < 5000) {
+    discount = BASE_DISCOUNT;
+  }
+  // Change code above this line
+  return discount;
+}
+
+console.log(getDiscount(137000));
+console.log(getDiscount(46900));
+console.log(getDiscount(8250));
+console.log(getDiscount(1300));
+console.log(getDiscount(5000));
+console.log(getDiscount(20000));
+console.log(getDiscount(50000));
 
 //! Завдання 25)
 //todo
