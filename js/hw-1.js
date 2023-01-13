@@ -945,7 +945,7 @@
 // console.log(isNumberNotInRange(20, 50, 24));
 // console.log(isNumberNotInRange(20, 50, 76));
 
-//! Завдання 24)
+//! Завдання 24) if...else визначаємо знижки залежно від загальної суми витрачених грошей
 // ЗАДАЧА: ОБЧИСЛЕННЯ ЗНИЖКИ
 
 //todo Функція getDiscount(totalSpent) визначає значення знижки, залежно від загальної суми витрачених грошей (параметр totalSpent) в магазині за весь час (партнерська програма). Знижка записується у змінну discount і повертається з функції як результат її роботи.
@@ -958,62 +958,402 @@
 //todo Якщо витрачено менше 5000 кредитів - знижка 0 (базовий партнер)
 //todo Значення знижок кожного рівня зберігаються в однойменних константах BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT і GOLD_DISCOUNT.
 
-// Оголошена функція getDiscount(totalSpent)
-// Виклик getDiscount(137000) повертає 0.1
-// Виклик getDiscount(46900) повертає 0.05
-// Виклик getDiscount(8250) повертає 0.02
-// Виклик getDiscount(1300) повертає 0
-// Виклик getDiscount(5000) повертає 0.02
-// Виклик getDiscount(20000) повертає 0.05
-// Виклик getDiscount(50000) повертає 0.1
+//* Оголошена функція getDiscount(totalSpent)
+//* Виклик getDiscount(137000) повертає 0.1
+//* Виклик getDiscount(46900) повертає 0.05
+//* Виклик getDiscount(8250) повертає 0.02
+//* Виклик getDiscount(1300) повертає 0
+//* Виклик getDiscount(5000) повертає 0.02
+//* Виклик getDiscount(20000) повертає 0.05
+//* Виклик getDiscount(50000) повертає 0.1
 
-function getDiscount(totalSpent) {
-  const BASE_DISCOUNT = 0;
-  const BRONZE_DISCOUNT = 0.02;
-  const SILVER_DISCOUNT = 0.05;
-  const GOLD_DISCOUNT = 0.1;
-  let discount;
-  // Change code below this line
-  if (totalSpent >= 50000) {
-    discount = GOLD_DISCOUNT;
-  } else if (totalSpent > 20000 && 50000 > totalSpent) {
-    discount = SILVER_DISCOUNT;
-  } else if (totalSpent > 5000 && 20000 < totalSpent) {
-    discount = BRONZE_DISCOUNT;
-  } else if (totalSpent < 5000) {
-    discount = BASE_DISCOUNT;
-  }
-  // Change code above this line
-  return discount;
-}
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+//   // Change code below this line
+//   if (totalSpent >= 50000) {
+//     discount = GOLD_DISCOUNT;
+//   } else if (totalSpent >= 20000 && 50000 > totalSpent) {
+//     discount = SILVER_DISCOUNT;
+//   } else if (totalSpent >= 5000 && 20000 > totalSpent) {
+//     discount = BRONZE_DISCOUNT;
+//   } else {
+//     discount = BASE_DISCOUNT;
+//   }
+//   // Change code above this line
+//   return discount;
+// }
 
-console.log(getDiscount(137000));
-console.log(getDiscount(46900));
-console.log(getDiscount(8250));
-console.log(getDiscount(1300));
-console.log(getDiscount(5000));
-console.log(getDiscount(20000));
-console.log(getDiscount(50000));
+// console.log(getDiscount(137000));
+// console.log(getDiscount(46900));
+// console.log(getDiscount(8250));
+// console.log(getDiscount(1300));
+// console.log(getDiscount(5000));
+// console.log(getDiscount(20000));
+// console.log(getDiscount(50000));
 
-//! Завдання 25)
-//todo
+//! Завдання 25) заміна інструкції if...else => тернарним оператором
+// Тернарний оператор використовується як синтаксично коротша заміна інструкції if...else, коли одній і тій самій змінній необхідно присвоїти різні значення за умовою.
 
-//! Завдання 26)
-//todo
+// <умова> ? <вираз, якщо умова істинна> : <вираз, якщо умова хибна>
+// Працює за такою схемою:
 
-//! Завдання 27)
-//todo
+// Обчислюється умова.
+// Якщо умова істинна, тобто приводиться до true, обчислюється вираз після ?.
+// Якщо умова хибна, тобто приводиться до false, обчислюється вираз після :.
+// Значення обчисленого виразу повертається як результат роботи тернарного оператора.
+// let type;
+// const age = 20;
 
-//! Завдання 28)
-//todo
+// if (age >= 18) {
+//   type = "adult";
+// } else {
+//   type = "child";
+// }
 
-//! Завдання 29)
-//todo
+// console.log(type); // "adult"
+// Виконаємо рефакторинг, замінивши if...else тернарним оператором.
 
-//! Завдання 30)
-//todo
+// const age = 20;
+// const type = age >= 18 ? "adult" : "child";
+// console.log(type); // "adult"
+// Увага
+// Тернарний оператор повинен використовуватися у простих операціях присвоєння або повернення. Застосовувати його для заміни складних розгалужень - погана практика (антипатерн).
+
+//todo Виконай рефакторинг рішення задачі «Склад товарів», замінивши інструкцію if...else тернарним оператором.
+
+//* Оголошена функція checkStorage(available, ordered).
+//* Використаний тернарний оператор.
+//* Виклик checkStorage(100, 50) повертає "The order is accepted, our manager will contact you"
+//* Виклик checkStorage(100, 130) повертає "Not enough goods in stock!"
+//* Виклик checkStorage(200, 20) повертає "The order is accepted, our manager will contact you"
+//* Виклик checkStorage(200, 150) повертає "The order is accepted, our manager will contact you"
+//* Виклик checkStorage(150, 180) повертає "Not enough goods in stock!"
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+
+//   if (ordered > available) {
+//     message = "Not enough goods in stock!";
+//   } else {
+//     message = "The order is accepted, our manager will contact you";
+//   }
+
+//   // Change code above this line
+//   return message;
+// }
+//?====================================
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   message =
+//     ordered > available
+//       ? "Not enough goods in stock!"
+//       : "The order is accepted, our manager will contact you";
+//   return message;
+//   console.log(message);
+// }
+
+// console.log(checkStorage(100, 50));
+// console.log(checkStorage(100, 130));
+// console.log(checkStorage(200, 20));
+// console.log(checkStorage(200, 150));
+// console.log(checkStorage(150, 180));
+
+//! Завдання 26) тернарник - провірка пароля
+// ЗАДАЧА: ПЕРЕВІРКА ПАРОЛЯ
+
+//todo Функція checkPassword(password) порівнює переданий їй пароль (параметр password) зі збереженим паролем адміністратора (константа ADMIN_PASSWORD) і повертає рядок з повідомленням про результат.
+
+// Використовуючи тернарний оператор, доповни функцію таким чином, що:
+
+// Якщо значення password і ADMIN_PASSWORD збігаються, присвой змінній message рядок "Access is allowed".
+// В іншому випадку, присвой message рядок "Access denied, wrong password!".
+
+//* Оголошена функція checkPassword(password)
+//* Використаний тернарний оператор
+//* Виклик checkPassword("jqueryismyjam") повертає "Access is allowed"
+//* Виклик checkPassword("angul4r1sl1f3") повертає "Access denied, wrong password!"
+//* Виклик checkPassword("r3actsux") повертає "Access denied, wrong password!"
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+
+//   message =
+//     password === ADMIN_PASSWORD
+//       ? "Access is allowed"
+//       : "Access denied, wrong password!";
+
+//   return message;
+//   console.log(message);
+// }
+
+// console.log(checkPassword("jqueryismyjam"));
+// console.log(checkPassword("angul4r1sl1f3"));
+// console.log(checkPassword("r3actsux"));
+
+//! Завдання 27) if...else заміна на switch (виведення ціни залежно від підписки)
+// У деяких випадках незручність читання складних розгалужень if...else можна уникнути, використовуючи «плоскіший» синтаксис інструкції розгалуження switch.
+
+// Сфера застосування switch обмежена задачами з одним загальним питанням (що порівнювати) і безліччю варіантів відповідей (з чим порівнювати).
+
+// switch (значення) {
+//   case значення:
+//     інструкції;
+//     break;
+
+//   case значення:
+//     інструкції;
+//     break;
+// }
+// Його синтаксис складається з блоку switch(значення) - що потрібно порівняти та безлічі окремих випадків case значення: - з чим потрібно порівняти. Для порівняння використовується оператор строгої рівності ===. Тобто не можна порівняти на більше або менше, тільки на рівність.
+
+// Значення в блоці switch(значення) - рядок або число, яке порівнюється на строгу рівність з усіма значеннями в блоках case значення: по черзі, зверху вниз.
+
+// Оператор break в кінці кожного блоку case необхідний, щоб перервати подальші перевірки та одразу перейти до коду після switch у тому разі, коли перевірка на рівність повернула true.
+
+//todo Функція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (параметр type), перевіряє її на збіг з трьома можливими типами щомісячної передплати та повертає ціну, що зберігається у змінній price.
+
+//todo Якщо значення параметра type - це рядок:
+
+//todo "starter" - ціна передплати 0 кредитів.
+//todo "professional" - ціна передплати 20 кредитів.
+//todo "organization" - ціна передплати 50 кредитів.
+//todo Спочатку в тілі функції була інструкція if...else, яка виглядала ось так.
+
+//todo if (type === "starter") {
+//todo   price = 0;
+//todo } else if (type === "professional") {
+//todo   price = 20;
+//todo } else if (type === "organization") {
+//todo   price = 50;
+//todo }
+
+//todo Після рефакторингу інструкція if..else була замінена на switch. Доповни код інструкції switch, щоб функція працювала правильно.
+
+//* Оголошена функція getSubscriptionPrice(type)
+//* Виклик getSubscriptionPrice("professional") повертає число 20
+//* Виклик getSubscriptionPrice("organization") повертає число 50
+//* Виклик getSubscriptionPrice("starter") повертає число 0
+
+// function getSubscriptionPrice(type) {
+//   let price;
+//   // Change code below this line
+
+//   switch (
+//     type // Change this line
+//   ) {
+//     case "starter": // Change this line
+//       price = 0; // Change this line
+//       break;
+
+//     case "professional": // Change this line
+//       price = 20; // Change this line
+//       break;
+
+//     case "organization": // Change this line
+//       price = 50; // Change this line
+//       break;
+//   }
+
+//   // Change code above this line
+//   return price;
+//   console.log(price);
+// }
+
+// console.log(getSubscriptionPrice("professional"));
+// console.log(getSubscriptionPrice("organization"));
+// console.log(getSubscriptionPrice("starter"));
+
+//! Завдання 28) if...else => switch провірка пароля і виведення повідомлення в разі відсутності збігів => default
+// Якщо жодного збігу значень не відбулося, необхідно виконати код за замовчуванням, як у блоці else для інструкції if...else. Для цього, після всіх блоків case додається блок default.
+
+// switch (значення) {
+//   case значення:
+//     інструкції;
+//     break;
+
+//   case значення:
+//     інструкції;
+//     break;
+
+//   default:
+//     інструкції;
+// }
+// Оператор break після блоку default не потрібен, оскільки це і так останнє, що буде виконано в switch і управління буде передане коду після нього.
+
+//todo Функція checkPassword(password) отримує пароль в параметр password, перевіряє його на збіг з паролем адміністратора у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння, яке зберігається у змінній message.
+
+//todo Якщо значення параметра password:
+
+//todo дорівнює null, значить користувач скасував операцію і в message записується рядок "Canceled by user!".
+//todo збігається зі значенням ADMIN_PASSWORD, у змінну message присвоюється рядок "Welcome!".
+//todo не задовольняє жодну з попередніх умов, у змінну message записується рядок "Access denied, wrong password!".
+//todo Зроби рефакторинг коду, замінивши інструкцію if..else на switch, і не забудь про блок default (аналог else).
+
+//* Оголошена функція checkPassword(password)
+//* Виклик checkPassword("mangohackzor") повертає "Access denied, wrong password!"
+//* Виклик checkPassword(null) повертає "Canceled by user!"
+//* Виклик checkPassword("polyhax") повертає "Access denied, wrong password!"
+//* Виклик checkPassword("jqueryismyjam") повертає "Welcome!"
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+//   // Change code below this line
+
+//   if (password === null) {
+//     message = "Canceled by user!";
+//   } else if (password === ADMIN_PASSWORD) {
+//     message = "Welcome!";
+//   } else {
+//     message = "Access denied, wrong password!";
+//   }
+
+//   return message;
+// }
+
+//?================================
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+
+//   switch (password) {
+//     case null:
+//       message = "Canceled by user!";
+//       break;
+
+//     case ADMIN_PASSWORD:
+//       message = "Welcome!";
+//       break;
+
+//     default:
+//       message = "Access denied, wrong password!";
+//   }
+
+//   return message;
+//   console.log(message);
+// }
+
+// console.log(checkPassword("mangohackzor"));
+// console.log(checkPassword(null));
+// console.log(checkPassword("polyhax"));
+// console.log(checkPassword("jqueryismyjam"));
+
+//! Завдання 29) провіряємо доступність доставки в країну якщо доступна виводимо повідомлення з країною та ціною доставки
+// ЗАДАЧА: ДОСТАВКА ТОВАРУ
+
+//todo Функція getShippingCost(country) повинна перевіряти можливість доставки товару в країну користувача (параметр country) і повертати повідомлення про результат, що зберігається у змінній message. Обов'язково використовуй інструкцію switch.
+
+// Формат рядка, що повертається "Shipping to <country> will cost <price> credits", де замість <country> і <price>, необхідно підставити відповідні значення.
+
+// Список країн і вартість доставки:
+
+// China - 100 кредитів
+// Chile - 250 кредитів
+// Australia - 170 кредитів
+// Jamaica - 120 кредитів
+// Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у списку, то функція повинна повернути рядок "Sorry, there is no delivery to your country"
+
+//* Оголошена функція getShippingCost(country)
+//* В тілі функції використана інструкція switch
+//* Виклик getShippingCost("Australia") повертає "Shipping to Australia will cost 170 credits"
+//* Виклик getShippingCost("Germany") повертає "Sorry, there is no delivery to your country"
+//* Виклик getShippingCost("China") повертає "Shipping to China will cost 100 credits"
+//* Виклик getShippingCost("Chile") повертає "Shipping to Chile will cost 250 credits"
+//* Виклик getShippingCost("Jamaica") повертає "Shipping to Jamaica will cost 120 credits"
+//* Виклик getShippingCost("Sweden") повертає "Sorry, there is no delivery to your country"
+
+// function getShippingCost(country) {
+//   let message;
+
+//   switch (country) {
+//     case "China":
+//       price = 100;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       break;
+
+//     case "Chile":
+//       price = 250;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       break;
+
+//     case "Australia":
+//       price = 170;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       break;
+
+//     case "Jamaica":
+//       price = 120;
+//       message = `Shipping to ${country} will cost ${price} credits`;
+//       break;
+
+//     default:
+//       message = "Sorry, there is no delivery to your country";
+//   }
+
+//   return message;
+//   console.log(message);
+// }
+
+// console.log(getShippingCost("Australia"));
+// console.log(getShippingCost("Germany"));
+// console.log(getShippingCost("China"));
+// console.log(getShippingCost("Chile"));
+// console.log(getShippingCost("Jamaica"));
+// console.log(getShippingCost("Sweden"));
+
+//! Завдання 30) length визначаємо кількість елементів в передаваноме елементі
+// Для того щоб дізнатися довжину рядка, тобто кількість її символів, у рядків є вбудована властивість length, значення якої можна отримати, звернувшись до неї через крапку після імені змінної або рядкового літерала.
+
+// const productName = "Repair droid";
+
+// // Якщо у змінній зберігається рядок
+// console.log(productName.length); // 12
+
+// // Якщо рядковий літерал
+// console.log("Repair droid".length); // 12
+
+//todo Функція getNameLength(name) приймає ім'я (параметр name) і повертає рядок, в якому вказана його довжина. Доповни шаблонний рядок у змінній message довжиною рядка з параметра name.
+
+//* Оголошена функція getNameLength(name)
+//* Виклик функції getNameLength("Poly") повертає "Name Poly is 4 characters long"
+//* Виклик функції getNameLength("Harambe") повертає "Name Harambe is 6 characters long"
+//* Виклик функції getNameLength("Billy") повертає "Name Billy is 5 characters long"
+//* Виклик функції getNameLength("Joe") повертає "Name Joe is 3 characters long"
+
+// function getNameLength(name) {
+//   const message = `Name ${name} is ${name.length} characters long`; // Change this line
+
+//   return message;
+//   console.log(message);
+// }
+
+// console.log(getNameLength("Poly"));
+// console.log(getNameLength("Harambe"));
+// console.log(getNameLength("Billy"));
+// console.log(getNameLength("Joe"));
 
 //! Завдання 31)
+// Рядок — це індексований набір з нуля або більше символів, взятих в одинарні, подвійні або скісні лапки.
+
+// Індексація елементів рядка починається з нуля. Наприклад, в рядку 'JavaScript' літера 'J' стоїть на позиції з індексом 0, а 't' - під індексом 9. При цьому довжина рядка 'JavaScript' дорівнює 10, тобто індекс останнього елемента завжди на одиницю менший його довжини.
+
+// Для доступу до значення елемента рядка використовується синтаксис квадратних дужок рядок[індекс].
+
+// const productName = "Repair droid";
+// console.log(productName[0]); // "R"
+// console.log(productName[5]); // "r"
+// console.log(productName[11]); // "d"
+// console.log(productName[productName.length - 1]); // "d"
+// Вміст рядка не можна змінити, лише прочитати. Тобто не можна взяти якийсь символ і замінити його, щойно рядок створений - він такий назавжди. Можна лише створити повністю новий рядок і присвоїти у змінну, замість старого.
+
 //todo
 
 //! Завдання 32)
