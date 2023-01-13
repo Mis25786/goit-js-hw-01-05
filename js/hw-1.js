@@ -1340,7 +1340,7 @@
 // console.log(getNameLength("Billy"));
 // console.log(getNameLength("Joe"));
 
-//! Завдання 31)
+//! Завдання 31) визначення кількості елементів в рядку і показ потрібного елемента з рядка
 // Рядок — це індексований набір з нуля або більше символів, взятих в одинарні, подвійні або скісні лапки.
 
 // Індексація елементів рядка починається з нуля. Наприклад, в рядку 'JavaScript' літера 'J' стоїть на позиції з індексом 0, а 't' - під індексом 9. При цьому довжина рядка 'JavaScript' дорівнює 10, тобто індекс останнього елемента завжди на одиницю менший його довжини.
@@ -1354,19 +1354,234 @@
 // console.log(productName[productName.length - 1]); // "d"
 // Вміст рядка не можна змінити, лише прочитати. Тобто не можна взяти якийсь символ і замінити його, щойно рядок створений - він такий назавжди. Можна лише створити повністю новий рядок і присвоїти у змінну, замість старого.
 
-//todo
+//todo Доповни код, присвоївши оголошеним змінним вирази звертання до відповідних елементів або властивостей рядка у змінній course.
 
-//! Завдання 32)
-//todo
+//todo courseTopicLength - довжина рядка.
+//todo firstElement - перший символ рядка.
+//todo lastElement - останній символ рядка.
 
-//! Завдання 33)
-//todo
+//* Оголошена змінна courseTopic
+//* Значення змінної courseTopic - це рядок "JavaScript essentials"
+//* Оголошена змінна courseTopicLength
+//* Значення змінної courseTopicLength - це число 21
+//* Оголошена змінна firstElement
+//* Значення змінної firstElement - це рядок "J"
+//* Оголошена змінна lastElement
+//* Значення змінної lastElement - це рядок "s"
 
-//! Завдання 34)
-//todo
+// const courseTopic = "JavaScript essentials";
 
-//! Завдання 35)
-//todo
+// const courseTopicLength = courseTopic.length;
+// console.log(courseTopicLength);
 
-//! Завдання 36)
-//todo
+// const firstElement = courseTopic[0];
+// console.log(firstElement);
+
+// const lastElement = courseTopic[courseTopic.length - 1];
+// console.log(lastElement);
+
+//! Завдання 32) slice(startIndex, endIndex)  Метод яким вирізаємо необхідні елементи з рядка => і створюємо новий рядок
+// Метод рядків slice(startIndex, endIndex) використовується для створення копії частини або всього рядка. Він робить копію елементів рядка від startIndex і до, але не включно endIndex, і повертає новий рядок.
+
+// const productName = "Repair droid";
+// console.log(productName.slice(0, 4)); // "Repa"
+// console.log(productName.slice(3, 9)); // "air dr"
+// console.log(productName.slice(0, productName.length)); // "Repair droid"
+// console.log(productName.slice(7, productName.length)); // "droid"
+
+//todo Функція getSubstring(string, length) приймає рядок і повертає підрядок від початку і до length символів. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику:
+
+//todo string - оригінальний рядок
+//todo length - кількість символів з початку рядка для підрядка
+//todo Присвой змінній substring вираз створення підрядка довжиною length символів (від початку) з рядка string.
+
+//* Оголошена функція getSubstring(string, length)
+//* Виклик функції getSubstring("Hello world", 3) повертає "Hel"
+//* Виклик функції getSubstring("Hello world", 6) повертає "Hello"
+//* Виклик функції getSubstring("Hello world", 8) повертає "Hello wo"
+//* Виклик функції getSubstring("Hello world", 11) повертає "Hello world"
+//* Виклик функції getSubstring("Hello world", 0) повертає ""
+
+// function getSubstring(string, length) {
+//   const substring = string.slice(0, length); // Change this line
+
+//   return substring;
+// }
+
+// console.log(getSubstring("Hello world", 3));
+// console.log(getSubstring("Hello world", 6));
+// console.log(getSubstring("Hello world", 8));
+// console.log(getSubstring("Hello world", 11));
+// console.log(getSubstring("Hello world", 0));
+
+//! Завдання 33) провіряємо довжену рядка якщо він більший за вказане значення то обрізаємо його і додаємо "..."
+// ЗАДАЧА: ФОРМАТУВАННЯ ПОВІДОМЛЕННЯ
+
+//todo Функція formatMessage(message, maxLength) приймає рядок (параметр message) і форматує його, якщо довжина перевищує значення в параметрі maxLength.
+
+//todo Доповни код функції таким чином, що якщо довжина рядка:
+
+//todo не перевищує maxLength, функція повертає його в початковому вигляді.
+//todo більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...", після чого повертає скорочену версію.
+
+//* Оголошена функція formatMessage(message, maxLength)
+//* Виклик функції formatMessage("Curabitur ligula sapien", 16) повертає "Curabitur ligula..."
+//* Виклик функції formatMessage("Curabitur ligula sapien", 23) повертає "Curabitur ligula sapien"
+//* Виклик функції formatMessage("Vestibulum facilisis purus nec", 20) повертає "Vestibulum facilisis..."
+//* Виклик функції formatMessage("Vestibulum facilisis purus nec", 30) повертає "Vestibulum facilisis purus nec"
+//* Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) повертає "Nunc sed turpis..."
+//* Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) повертає "Nunc sed turpis a felis in nunc fringilla"
+
+// function formatMessage(message, maxLength) {
+//   let result;
+
+//   result =
+//     message.length > maxLength ? message.slice(0, maxLength) + "..." : message;
+
+//   //   if (message.length > maxLength) {
+//   //     result = message.slice(0, maxLength) + "...";
+//   //   } else {
+//   //     result = message;
+//   //   }
+
+//   return result;
+// }
+
+// console.log(formatMessage("Curabitur ligula sapien", 16));
+// console.log(formatMessage("Curabitur ligula sapien", 23));
+// console.log(formatMessage("Vestibulum facilisis purus nec", 20));
+// console.log(formatMessage("Vestibulum facilisis purus nec", 30));
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15));
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41));
+
+//! Завдання 34) toLowerCase() і toUpperCase()  Переведення рядка в - верхній або нижній - регістр
+// Бувають ситуації, коли всі символи в рядку необхідно перетворити в один регістр, верхній або нижній. Наприклад, під час пошуку за ключовим словом, коли користувач вводить рядок 'saMsUng', а порівняти її потрібно з рядком 'samsung' або 'SAMSUNG'.
+
+// console.log("saMsUng" === "samsung"); // false
+// console.log("saMsUng" === "SAMSUNG"); // false
+// Щоб не вимагати абсолютно точне введення, можна зробити «нормалізацію» введеного користувачем рядка, тобто перетворити всі його символи у верхній або нижній регістр. Методи рядка toLowerCase() і toUpperCase() повернуть новий рядок у відповідному регістрі, не змінюючи оригінальний.
+
+// const BRAND_NAME = "SAMSUNG";
+// const userInput = "saMsUng";
+// const normalizedToUpperCaseInput = userInput.toUpperCase();
+
+// console.log(userInput); // 'saMsUng'
+// console.log(userInput === BRAND_NAME); // false
+// console.log(normalizedToUpperCaseInput); // 'SAMSUNG'
+// console.log(normalizedToUpperCaseInput === BRAND_NAME); // true
+
+//todo Функція normalizeInput(input) приймає рядок (параметр input) і повертає такий самий рядок, але в нижньому регістрі. Присвой змінній normalizedInput вираз створення рядка у нижньому регістрі з параметра input.
+
+//* Оголошена функція normalizeInput(input)
+//* Виклик функції normalizeInput("Hello world") повертає "hello world"
+//* Виклик функції normalizeInput("This ISN'T SpaM") повертає "this isn't spam"
+//* Виклик функції normalizeInput("Big SALE") повертає "big sale"
+
+// function normalizeInput(input) {
+//   const normalizedInput = input.toLowerCase(); // Change this line
+
+//   return normalizedInput;
+// }
+
+// console.log(normalizeInput("Hello world"));
+// console.log(normalizeInput("This ISN'T SpaM"));
+// console.log(normalizeInput("Big SALE"));
+
+//! Завдання 35) includes(substring) Провіряємо наявність елемента в рядку
+// Метод рядків includes(substring) перевіряє, чи входить підрядок substring у рядок, повертає буль - true, якщо входить, і false - в іншому випадку. Регістр символів в рядку і підрядку має значення, оскільки, наприклад літера "a" не дорівнює літері "А".
+
+// const productName = "Repair droid";
+
+// console.log(productName.includes("a")); // true
+// console.log(productName.includes("A")); // false
+// console.log(productName.includes("droid")); // true
+// console.log(productName.includes("Droid")); // false
+// console.log(productName.includes("Repair")); // true
+// console.log(productName.includes("repair")); // false
+
+//todo Функція checkForName(fullname, name) приймає два параметри та повертає буль true або false - результат перевірки входження підрядка name у рядок fullname.
+
+//todo fullname - повне ім'я, що складається з двох слів (імені та прізвища), розділених пробілом.
+//todo name - ім'я для перевірки входження в повне ім'я.
+//todo Присвой змінній result вираз перевірки входження імені (параметр name), у повне ім'я (параметр fullname). Нехай функція чітко розрізняє регістр літер, тобто «Петя» і «петя» - для неї різні імена.
+
+//* Оголошена функція checkForName(fullname, name).
+//* Виклик функції checkForName("Egor Kolbasov", "Egor") повертає true
+//* Виклик функції checkForName("Egor Kolbasov", "egor") повертає false
+//* Виклик функції checkForName("Egor Kolbasov", "egOr") повертає false
+//* Виклик функції checkForName("Egor Kolbasov", "Zhenya") повертає false
+//* Виклик функції checkForName("Vadim Nekrasov", "Vadim") повертає true
+//* Виклик функції checkForName("Vadim Nekrasov", "vadim") повертає false
+//* Виклик функції checkForName("Vadim Nekrasov", "Dima") повертає false
+
+// function checkForName(fullName, name) {
+//   const result = fullName.includes(name); // Change this line
+
+//   return result;
+// }
+
+// console.log(checkForName("Egor Kolbasov", "Egor"));
+// console.log(checkForName("Egor Kolbasov", "egor"));
+// console.log(checkForName("Egor Kolbasov", "egOr"));
+// console.log(checkForName("Egor Kolbasov", "Zhenya"));
+// console.log(checkForName("Vadim Nekrasov", "vadim"));
+// console.log(checkForName("Vadim Nekrasov", "Vadim"));
+// console.log(checkForName("Vadim Nekrasov", "Dima"));
+
+//! Завдання 36) шукаємо наявність слова в рядку - якщо воно там є виводимо true якщо ні false
+// ЗАДАЧА: ПЕРЕВІРКА СПАМУ
+
+//todo Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі, наприклад SPAM або sAlE.
+
+//todo Якщо знайшли заборонене слово (spam або sale) то функція повертає буль true.
+//todo Якщо в рядку відсутні заборонені слова, функція повертає буль false.
+
+// Оголошена функція checkForSpam(message).
+// Виклик функції checkForSpam("Latest technology news") повертає false
+// Виклик функції checkForSpam("JavaScript weekly newsletter")повертає false
+// Виклик функції checkForSpam("Get best sale offers now!") повертає true
+// Виклик функції checkForSpam("Amazing SalE, only tonight!") повертає true
+// Виклик функції checkForSpam("Trust me, this is not a spam message") повертає true
+// Виклик функції checkForSpam("Get rid of sPaM emails. Our book in on sale!") повертає true
+// Виклик функції checkForSpam("[SPAM] How to earn fast money?") повертає true
+
+// function checkForSpam(message) {
+//   let result;
+
+//   // result = message.toLowerCase().includes('spam') || message.toLowerCase().includes('sale') ? true : false;
+
+//   //////////////////////////////?????????////
+
+// ////   if (message.includes("spam")) {
+// ////     result = true;
+// ////   } else if (message.includes("sale")) {
+// ////     result = true;
+// ////   } else {
+// ////     result = false;
+// ////   }
+
+//   ////   switch (message[i]) {
+//   ////     case "spam":
+//   ////       result = true;
+//   ////     case "sale":
+//   ////       result = true;
+//   //////     default:
+//   ////       result = false;
+//   ////   }
+
+//   ////////////////////////////////////
+
+//   //   const lowWord = message.toLowerCase();
+
+//   //   result = lowWord.includes("spam") || lowWord.includes("sale") ? true : false;
+
+//   return result;
+// }
+
+// console.log(checkForSpam("Latest technology news"));
+// console.log(checkForSpam("JavaScript weekly newsletter"));
+// console.log(checkForSpam("Get best sale offers now!"));
+// console.log(checkForSpam("Amazing SalE, only tonight!"));
+// console.log(checkForSpam("Trust me, this is not a spam message"));
+// console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!"));
+// console.log(checkForSpam("[SPAM] How to earn fast money?"));
