@@ -256,7 +256,9 @@
 
 //! завдання 10) Метод split(delimiter) дозволяє перетворити рядок на масив, "розбивши" його по роздільнику delimiter.
 
-// Метод split(delimiter) дозволяє перетворити рядок на масив, "розбивши" його по роздільнику delimiter. Якщо роздільник - це порожній рядок, отримаємо масив окремих символів. Роздільником може бути один або кілька символів.
+// Метод split(delimiter) дозволяє перетворити рядок на масив, "розбивши" його по роздільнику delimiter.
+// Якщо роздільник - це порожній рядок, отримаємо масив окремих символів.
+// Роздільником може бути один або кілька символів.
 
 // const name = "Mango";
 // console.log(name.split("")); // ["M", "a", "n", "g", "o"]
@@ -287,4 +289,361 @@
 // console.log(splitMessage("Mango", ""));
 // console.log(splitMessage("best_for_week", "_"));
 
-//! завдання 11)
+//! завдання 11) повернення загальної суми гравірування за всі слова
+
+// Сервісу гравірування прикрас потрібна функція, яка б автоматично рахувала ціну гравірування, залежно від кількості слів і ціни за слово.
+
+// Оголошена функція calculateEngravingPrice(message, pricePerWord). Ця функція приймає рядок, що складається зі слів, розділених лише пробілами (параметр message) та ціну гравірування одного слова (параметр pricePerWord).
+
+//todo Напиши тіло функції, щоб вона повертала загальну вартість гравірування усіх слів в рядку.
+
+//* Оголошена функція calculateEngravingPrice(message, pricePerWord)
+//* Виклик calculateEngravingPrice("JavaScript is in my blood", 10) повертає 50
+//* Виклик calculateEngravingPrice("JavaScript is in my blood", 20) повертає 100
+//* Виклик calculateEngravingPrice("Web-development is creative work", 40) повертає 160
+//* Виклик calculateEngravingPrice("Web-development is creative work", 20) повертає 80
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//   //   const b = message.split(" ").length;
+//   //   return b * pricePerWord;
+
+//   return message.split(" ").length * pricePerWord;
+// }
+
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 10)); //50
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 20)); //100
+// console.log(calculateEngravingPrice("Web-development is creative work", 40)); //160
+// console.log(calculateEngravingPrice("Web-development is creative work", 20)); //80
+
+//! завдання 12) Метод масивів join(delimiter) з'єднати елементи масиву в рядок
+
+// Метод масивів join(delimiter) дозволяє з'єднати елементи масиву в рядок.
+// У рядку елементи будуть розділені символом або групою символів, зазначених у delimiter. Тобто це зворотна операція методу рядків split(delimiter).
+
+// const words = ["JavaScript", "is", "amazing"];
+// console.log(words.join("")); // 'JavaScriptisamazing'
+// console.log(words.join(" ")); // 'JavaScript is amazing'
+// console.log(words.join("*")); // 'JavaScript*is*amazing'
+
+// Доповни код функції makeStringFromArray(array, delimiter) таким чином, щоб вона повертала у змінній string результат з'єднання елементів масиву array з роздільником delimiter - рядок.
+
+// Оголошена функція makeStringFromArray(array, delimiter)
+// Виклик makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ") повертає "Mango hurries to the train"
+// Виклик makeStringFromArray(["M", "a", "n", "g", "o"], "")) повертає "Mango"
+// Виклик makeStringFromArray(["top", "picks", "for", "you"], "_") повертає "top_picks_for_you"
+
+// function makeStringFromArray(array, delimiter) {
+//   let string;
+
+//   //   string = array.join(delimiter);
+
+//   return array.join(delimiter);
+
+//   return string;
+// }
+
+// console.log(
+//   makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ")
+// );
+// console.log(makeStringFromArray(["M", "a", "n", "g", "o"], ""));
+// console.log(makeStringFromArray(["top", "picks", "for", "you"], "_"));
+
+//! завдання 13) переведення рядка в slug ("Arrays for begginers" => "arrays-for-begginers")
+
+// ЗАДАЧА: ГЕНЕРАТО*Р SLUG
+
+// Термін slug - це людино-зрозумілий унікальний ідентифікатор, який використовується у веб-розробці для створення читабельних URL-адрес.
+
+// Наприклад, замість того, щоб користувач побачив в адресному рядку mysite.com/posts/1q8fh74tx, можна зробити slug з назви статті. В результаті адреса буде приємнішою для сприйняття: mysite.com/posts/arrays-for-begginers.
+
+// Увага
+// Slug - це завжди рядок у нижньому регістрі, слова якого розділені тире.
+
+//todo Напиши функцію slugify(title), яка приймає заголовок статті, параметр title, і повертає slug, створений з цього рядка.
+
+// Значенням параметра title будуть рядки, слова яких розділені лише пробілами
+// Усі символи slug повинні бути у нижньому регістрі
+// Всі слова slug повинні бути розділені тире
+
+//* Оголошена функція slugify(title)
+//* Виклик slugify("Arrays for begginers") повертає "arrays-for-begginers"
+//* Виклик slugify("English for developer") повертає "english-for-developer"
+//* Виклик slugify("Ten secrets of JavaScript") повертає "ten-secrets-of-javascript"
+//* Виклик slugify("How to become a JUNIOR developer in TWO WEEKS") повертає "how-to-become-a-junior-developer-in-two-weeks"
+
+// function slugify(title) {
+//   return title.toLowerCase().split(" ").join("-");
+// }
+
+// console.log(slugify("Arrays for begginers"));
+// console.log(slugify("English for developer"));
+// console.log(slugify("Ten secrets of JavaScript"));
+// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
+
+//! завдання 14) повертаємо новий масив, що містить копію частини вихідного масиву
+
+// Метод slice(begin, end) повертає новий масив, що містить копію частини вихідного масиву, не змінюючи його. Копія робиться від begin і до, але не включно, end - індекси елементів вихідного масиву.
+
+// Якщо begin та end не вказані, буде створена повна копія вихідного масиву.
+// Якщо не вказаний end, копіювання буде від start до кінця вихідного масиву.
+// Якщо значення start від'ємне, а end не вказане, то будуть скопійовані останні N елементів.
+// const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
+
+// console.log(planets.slice(0, 2)); // ['Earth', 'Mars']
+// console.log(planets.slice(0, 4)); // ['Earth', 'Mars', 'Venus', 'Jupiter']
+// console.log(planets.slice(1, 3)); // ['Mars', 'Venus']
+// console.log(planets.slice(-2)); // ['Jupiter', 'Saturn']
+// console.log(planets.slice()); // ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn']
+
+//todo Доповни код таким чином, щоб змінні містили часткові копії вихідного масиву fruits.
+
+// firstTwoEls - масив із перших двох елементів
+// nonExtremeEls - масив з усіх елементів, крім першого та останнього
+// lastThreeEls - масив із трьох останніх елементів
+
+//* Оголошена змінна fruits
+//* Значення змінної fruits - це масив ["apple", "plum", "pear", "orange", "banana"]
+//* Оголошена змінна firstTwoEls
+//* Значення змінної firstTwoEls - це масив ["apple", "plum"]
+//* Оголошена змінна nonExtremeEls
+//* Значення змінної nonExtremeEls - це масив ["plum", "pear", "orange"]
+//* Оголошена змінна lastThreeEls
+//* Значення змінної lastThreeEls - це масив ["pear", "orange", "banana"]
+//* Змінній lastThreeEls присвоєна копія частини масиву fruits після застосування методу slice з правильними аргументами
+
+// const fruits = ["apple", "plum", "pear", "orange", "banana"];
+
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, 4);
+// const lastThreeEls = fruits.slice(-3);
+
+// console.log(firstTwoEls);
+// console.log(nonExtremeEls);
+// console.log(lastThreeEls);
+
+//! завдання 15) об'єднання двох або більше масивів
+
+// Метод concat використовується для об'єднання двох або більше масивів. Він не змінює масив на якому викликається, а повертає новий. Порядок аргументів методу впливає на порядок елементів нового масиву.
+
+// const firstArray = ["Mercury", "Venus", "Earth"];
+// const secondArray = ["Mars", "Jupiter"];
+// const thirdArray = ["Saturn", "Uranus", "Neptune"];
+// const allPlanets = firstArray.concat(secondArray, thirdArray);
+
+// console.log(firstArray); // ['Mercury', 'Venus', 'Earth'];
+// console.log(allPlanets); // ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+
+// Доповни код таким чином, щоб у змінній allClients утворився масив усіх елементів масивів oldClients і newClients.
+
+// Оголошена змінна oldClients
+// Значення змінної oldClients - це масив ["Mango", "Ajax", "Poly", "Kiwi"]
+// Оголошена змінна newClients
+// Значення змінної newClients - це масив ["Peach", "Houston"]
+// Оголошена змінна allClients
+// Значення змінної allClients - це масив ["Mango", "Ajax", "Poly", "Kiwi", "Peach", "Houston"]
+// Змінній allClients присвоєний масив після застосування методу concat з правильними аргументами
+
+// const oldClients = ["Mango", "Ajax", "Poly", "Kiwi"];
+// const newClients = ["Peach", "Houston"];
+
+// const allClients = oldClients.concat(newClients); // Change this line
+
+// console.log(allClients);
+
+//! завдання 16) створення нового масиву кількість елементів якого не більша за maxLength
+
+// ЗАДАЧА: КОМПОЗИЦІЯ МАСИВІВ
+
+// Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма елементами двох вихідних firstArray і secondArray. Параметр maxLength містить максимально допустиму довжину нового масиву.
+
+// Якщо кількість елементів нового масиву більша за maxLength, функція повинна повернути копію масиву довжиною maxLength елементів. В іншому випадку функція повинна повернути новий масив повністю.
+
+//* Оголошена функція makeArray(firstArray, secondArray, maxLength)
+//* Виклик makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) повертає ["Mango", "Poly", "Ajax"]
+//* Виклик makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) повертає ["Mango", "Poly", "Houston", "Ajax"]
+//* Виклик makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) повертає ["Mango", "Ajax", "Chelsea"]
+//* Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) повертає ["Earth", "Jupiter"]
+//* Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) повертає ["Earth", "Jupiter", "Neptune", "Uranus"]
+//* Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
+//* Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
+
+// function makeArray(firstArray, secondArray, maxLength) {
+//   const arr = firstArray.concat(secondArray);
+//   //   console.log(arr);
+
+//   return arr.length > maxLength
+//     ? arr.slice(0, maxLength)
+//     : firstArray.concat(secondArray);
+
+//   //   if (arr.length > maxLength) {
+//   //     return arr.slice(0, maxLength);
+//   //   }
+
+//   //   return firstArray.concat(secondArray);
+// }
+
+// console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+// console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+// console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2));
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
+
+//! завдання 17) Оголошення циклу for таким чином, щоб він логував всі цілі числа в діапазоні від start до end включно
+
+// Цикли використовуються для багаторазового повторення коду. Оголошення циклу for складається з трьох виразів.
+
+// for (Ініціалізація; Умова; Пост - вираз) {
+//   // Тіло циклу
+// }
+// Ініціалізація - виконується один раз перед початком циклу. Використовується для створення змінної-лічильника і встановлення її початкового значення.
+// Умова - вираз, що оцінюється перед кожною ітерацією (повторенням) циклу. Тіло циклу виконується тільки тоді, коли вираз приводиться до true. Цикл завершується, якщо значення буде false.
+// Пост-вираз - виконується в кінці кожного повторення циклу, перед перевіркою умови. Використовується для оновлення змінної-лічильника.
+// Тіло - набір інструкцій для виконання на кожному повторенні. Виконується, якщо вираз умови приводиться до true.
+// for (let i = 0; i <= 20; i += 5) {
+//   console.log(i);
+// }
+// В прикладі оголошується змінна i, ініціалізується значенням 0, і цикл виконується (його тіло) доти, доки i <= 20, тобто умова приводиться до true. Після кожної ітерації лічильник збільшується на 5.
+
+//todo Доповни цикл for таким чином, щоб він логував всі цілі числа в діапазоні від start до end включно.
+
+//* Оголошена змінна start
+//* Значення змінної start - це число 3
+//* Оголошена змінна end
+//* Значення змінної end - це число 7
+//* Оголошена змінна i - лічильник циклу
+//* Початкове значення змінної i дорівнює 3
+//* Умова циклу приводиться до true доти, доки i менше або дорівнює 7
+//* На кожній ітерації значення змінної i збільшується на одиницю
+//* Виведення у консоль змінної i покаже числа 3, 4, 5, 6, 7
+
+// const start = 3;
+// const end = 7;
+
+// for (let i = start; i <= end; i += 1) {
+//   console.log(i);
+// }
+
+//! завдання 18) повертає суму всіх ітерацій до вказаного числа (Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.)
+
+// ЗАДАЧА: СУМА ЧИСЕЛ (ЦИКЛ FOR)
+
+//todo Напиши функцію calculateTotal(number), яка приймає ціле число (параметр number) і повертає суму всіх цілих чисел від одиниці і до цього числа. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
+
+//* Оголошена функція calculateTotal(number)
+//* Виклик функції calculateTotal(1) повертає 1
+//* Виклик функції calculateTotal(3) повертає 6
+//* Виклик функції calculateTotal(7) повертає 28
+//* Виклик функції calculateTotal(18) повертає 171
+//* Виклик функції calculateTotal(24) повертає 300
+//* Виклик функції calculateTotal() з випадковим числом повертає правильне значення
+
+// function calculateTotal(number) {
+//   let total = 0;
+
+//   for (let i = 0; i <= number; i += 1) {
+//     total += i;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotal(1)); //1
+// console.log(calculateTotal(3)); //6
+// console.log(calculateTotal(7)); //28
+// console.log(calculateTotal(18)); //171
+// console.log(calculateTotal(24)); //300
+// console.log(calculateTotal()); //0
+
+//! завдання 19) вивести в консоль кожен елемент масиву
+
+// Цикл for можна використовувати для ітерації по масиву, тобто «перебрати» його поелементно.
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// for (let i = 0; i < planets.length; i += 1) {
+//   console.log(planets[i]);
+// }
+// Для доступу до елементів використовується синтаксис квадратних дужок масив[індекс], де індекс - це значення лічильника циклу від 0 і до останнього індексу масиву, який на одиницю менший за довжину масиву.
+
+//todo Доповни код циклу for таким чином, щоб він послідовно логував усі елементи масиву fruits.
+
+//* Оголошена змінна fruits
+//* Значення змінної fruits - це масив ["apple", "plum", "pear", "orange"]
+//* Оголошена змінна i - лічильник циклу
+//* Початкове значення змінної i дорівнює 0
+//* Умова циклу приводиться до true доти, доки i менше за 4
+//* На кожній ітерації значення змінної i збільшується на одиницю
+//* В тілі циклу for оголошується змінна const fruit і цій змінній присвоюється значення - елемент масиву
+//* В тілі циклу for використовується виведення у консоль змінної fruit
+
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// for (let i = 0; i < fruits.length; i += 1) {
+//   const fruit = fruits[i];
+
+//   //   console.log(fruits[i]);
+//   console.log(fruit);
+// }
+
+//! завдання 20) обчислюємо загальну суму всіх елементів в масиві
+
+// ЗАДАЧА: ОБЧИСЛЕННЯ СУМИ ПОКУПКИ
+
+//todo Напиши функцію calculateTotalPrice(order), яка приймає один параметр order - масив чисел, і обчислює загальну суму його елементів. Загальна сума елементів повинна зберігатися у змінній total, яка повертається як результат роботи функції.
+
+//* Оголошена функція calculateTotalPrice(order)
+//* Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+//* Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+//* Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+//* Виклик функції calculateTotalPrice() з випадковим масивом повертає правильне значення
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+// console.log(calculateTotalPrice());
+
+//! завдання 21)
+
+// ЗАДАЧА: ПОШУК НАЙДОВШОГО СЛОВА
+
+//todo Напиши функцію findLongestWord(string), яка приймає довільний рядок, що складається тільки зі слів, розділених пробілом (параметр string), і повертає найдовше слово в цьому рядку.
+
+//* Оголошена функція findLongestWord(string)
+//* Виклик функції findLongestWord("The quick brown fox jumped over the lazy dog") повертає jumped
+//* Виклик функції findLongestWord("Google do a roll") повертає Google
+//* Виклик функції findLongestWord("May the force be with you") повертає force
+//* Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
+
+function findLongestWord(string) {
+  //   let maxLongWords = " ";
+
+  for (let i = 0; i < string.length; i += 1) {
+    console.log(string[i]);
+
+    // maxLongWords += string[i];
+
+    // if (string[i] > maxLongWords) {
+    //   maxLongWords += string[i];
+    // }
+  }
+  //   return maxLongWords;
+}
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+// console.log(findLongestWord("Google do a roll"));
+// console.log(findLongestWord("May the force be with you"));
+// console.log(findLongestWord());
+
+// перебрати рядок
+// порівняти слова в рядку
+// повернути найдовше слово
