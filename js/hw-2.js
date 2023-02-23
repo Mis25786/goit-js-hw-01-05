@@ -612,7 +612,7 @@
 // console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
 // console.log(calculateTotalPrice());
 
-//! завдання 21)
+//! завдання 21) ПОШУК НАЙДОВШОГО СЛОВА
 
 // ЗАДАЧА: ПОШУК НАЙДОВШОГО СЛОВА
 
@@ -624,26 +624,63 @@
 //* Виклик функції findLongestWord("May the force be with you") повертає force
 //* Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
 
-function findLongestWord(string) {
-  //   let maxLongWords = " ";
+// function findLongestWord(string) {
+// 1 варіант====================================
+// const lengthWords = string.split(" ");
+// let maxLengthWord = lengthWords[0];
 
-  for (let i = 0; i < string.length; i += 1) {
-    console.log(string[i]);
+// for (const word of lengthWords) {
+//   if (word.length > maxLengthWord.length) {
+//   maxLengthWord = word;
+// }
+// }
+// return maxLengthWord;
 
-    // maxLongWords += string[i];
+// 2 варіант ===================================
+//   const words = string.split(" ");
+//   let wordLength = words[0];
 
-    // if (string[i] > maxLongWords) {
-    //   maxLongWords += string[i];
-    // }
-  }
-  //   return maxLongWords;
-}
+//   for (let i = 0; i < words.length; i += 1) {
+//     // console.log(words[i]);
 
-console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+//     if (words[i].length > wordLength.length) {
+//       wordLength = words[i];
+//     }
+//   }
+//   return wordLength;
+// }
+
+// console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
 // console.log(findLongestWord("Google do a roll"));
 // console.log(findLongestWord("May the force be with you"));
-// console.log(findLongestWord());
 
 // перебрати рядок
 // порівняти слова в рядку
 // повернути найдовше слово
+
+//! завдання 22)
+
+// Метод push() дозволяє додати один або кілька елементів в кінець масиву, без необхідності вказувати індекси елементів, що додаються.
+
+// const planets = ["Earth", "Mars", "Venus"];
+// planets.push("Jupiter");
+// planets.push("Saturn", "Uranus", "Neptune");
+
+// console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+
+// Доповни код функції createArrayOfNumbers(min, max) таким чином, щоб вона повертала масив усіх цілих чисел від значення min до max.
+
+// Оголошена функція createArrayOfNumbers(min, max)
+// Виклик функції createArrayOfNumbers(1, 3) повертає [1, 2, 3]
+// Виклик функції createArrayOfNumbers(14, 17) повертає [14, 15, 16, 17]
+// Виклик функції createArrayOfNumbers(29, 34) повертає [29, 30, 31, 32, 33, 34]
+// Виклик функції createArrayOfNumbers() з випадковими min і max повертає правильний масив
+// В циклі for використовувався метод push
+
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+
+  // Change code above this line
+  return numbers;
+}
